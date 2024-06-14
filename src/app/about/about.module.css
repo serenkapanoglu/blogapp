@@ -1,0 +1,53 @@
+.container{
+    display: flex;
+    gap: 50px;
+
+}
+
+.heroText{
+    font-size: 40px;
+    padding-top: 60px;
+    /*color: rgb(228, 69, 95); */
+    color: black;
+    font-weight: 300;
+}
+
+.littleImg{
+  padding-top: 20px;
+}
+
+
+.textContainer{
+    padding-bottom: 20px;
+}
+
+
+.imgContainer {
+    flex: 1;
+    position: relative;
+   
+  }
+.kalp{
+    margin: 0 20px;
+}
+
+@media (max-width: 1024px) {
+    .container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .heroText{
+      justify-content: center;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .littleImg {
+      font-size: 64px;
+    }
+  .imgContainer, .littleImg{
+    display: none;
+    
+  }
+  }
