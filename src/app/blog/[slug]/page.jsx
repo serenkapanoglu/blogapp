@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import styles from './singlePost.module.css'
-import postUser from '@/components/postUser/postUser';
+import PostUser from '@/components/PostUser/PostUser';
+import { Suspense } from 'react';
 const getData = async (slug) => {
     const res = await fetch(`http://jsonplaceholder.typicode.com/posts/${slug}`);
     if (!res.ok) {
@@ -28,11 +29,14 @@ src="/newyork.jpeg" alt='' height={500} width={350}/>
 <Image className={styles.avatar} 
 src="/newyork.jpeg" alt='' width={50} height={50} style={{borderRadius:"50%"}}/>
 
-<postUser userId = {post.userId}/>
+{/*{post && (<Suspense fallback = {<div>Loading...</div>}>
+<PostUser userId={post.userId} />
+</Suspense>
+)}; */}
 
 <div className={styles.detailText}>
-<span className={styles.detailTitle}>Published</span>
-<span className={styles.detailValue}>01.01.2024</span>
+    <span className={styles.detailTitle}>Published</span>
+    <span className={styles.detailValue}>01.01.2024</span>
 </div>
 
 </div>

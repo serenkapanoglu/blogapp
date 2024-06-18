@@ -1,9 +1,8 @@
-import { get } from "http";
-import styles from "./postUser.module.css"
+import styles from "./postUser.module.css";
 
 
 const getData = async (userId) => {
-    const res = await fetch("https://jsonplaceholder.typicode.com/users/${userId}");
+    const res = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`, {cache:"no-store"});
     if (!res.ok) {
         throw new Error('Failed to fetch data');
     }
@@ -12,7 +11,7 @@ const getData = async (userId) => {
 }
 
 
-const postUser = async({userId}) => {
+const PostUser = async({userId}) => {
    const user = await getData(userId);
 
   return (
@@ -23,4 +22,4 @@ const postUser = async({userId}) => {
   )
 }
 
-export default postUser;
+export default PostUser;
